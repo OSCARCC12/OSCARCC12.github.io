@@ -6,7 +6,7 @@
   <title>Oscar Cabrera | SOC, IAM & IT Operations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0d1117;
@@ -18,6 +18,7 @@
       --accent: #58a6ff;
       --tag-bg: #1f242c;
       --tag-border: #388bfd33;
+      --code-bg: #0b0e14;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,18 +39,18 @@
     header {
       border-bottom: 1px solid var(--border);
       padding-bottom: 2rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       color: var(--heading);
       font-weight: 700;
       letter-spacing: -0.02em;
     }
 
     .subtitle {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--accent);
       font-family: 'JetBrains Mono', monospace;
       margin-top: 0.3rem;
@@ -58,7 +59,7 @@
     .links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
+      gap: 0.7rem;
       margin-top: 1.2rem;
     }
 
@@ -67,7 +68,7 @@
       text-decoration: none;
       font-size: 0.85rem;
       font-family: 'JetBrains Mono', monospace;
-      padding: 0.35rem 0.75rem;
+      padding: 0.4rem 0.8rem;
       border: 1px solid var(--border);
       border-radius: 6px;
       background-color: var(--card-bg);
@@ -77,6 +78,50 @@
     .links a:hover {
       border-color: var(--accent);
       color: var(--accent);
+    }
+
+    .links a.resume-btn {
+      background-color: #1f6feb22;
+      border-color: #388bfd88;
+      color: #79c0ff;
+      font-weight: 600;
+    }
+
+    .links a.resume-btn:hover {
+      background-color: #1f6feb44;
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* Metric Proof Bar */
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .metric-val {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--heading);
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     section {
@@ -89,9 +134,38 @@
       border-bottom: 1px solid var(--border);
       padding-bottom: 0.4rem;
       margin-bottom: 1.2rem;
+    }
+
+    /* Interactive Filter Controls */
+    .filter-group {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+
+    .filter-btn.active {
+      background: #1f6feb22;
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
     }
 
     .grid {
@@ -109,6 +183,10 @@
       flex-direction: column;
       justify-content: space-between;
       transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .card.hidden {
+      display: none;
     }
 
     .card:hover {
@@ -154,6 +232,34 @@
     }
 
     .card a:hover { text-decoration: underline; }
+
+    /* Code Snippet Drawer */
+    details {
+      margin-top: 0.8rem;
+      border-top: 1px solid var(--border);
+      padding-top: 0.5rem;
+    }
+
+    summary {
+      font-size: 0.8rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    summary:hover { color: var(--accent); }
+
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-top: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #e6edf3;
+      overflow-x: auto;
+    }
 
     .skills-block {
       background: var(--card-bg);
@@ -246,21 +352,51 @@
         <a href="https://medium.com/@oscarecabrerap" target="_blank">Medium</a>
         <a href="https://www.credly.com/users/oscar-cabrera.967fc3a5" target="_blank">Credly Certifications</a>
         <a href="mailto:Oscar.Cabrera1112@gmail.com">Email</a>
+        <a href="https://github.com/OSCARCC12/OSCARCC12.github.io/raw/main/Oscar_Cabrera_Resume.docx" class="resume-btn" download>Download Resume (.docx)</a>
       </div>
     </header>
+
+    <!-- Proof Strip -->
+    <div class="metrics-bar">
+      <div class="metric-card">
+        <div class="metric-val">Top 5%</div>
+        <div class="metric-label">Hack The Box Global Rank</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">10,000+</div>
+        <div class="metric-label">Users Supported in Enterprise</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">6</div>
+        <div class="metric-label">Industry Certifications</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">Secret</div>
+        <div class="metric-label">DoD Security Clearance</div>
+      </div>
+    </div>
 
     <section>
       <h2>About</h2>
       <p style="color: var(--text-muted); font-size: 0.95rem;">
-        Experienced IT and security practitioner specializing in enterprise identity governance, endpoint defense, and log analysis[cite: 2]. Proven background diagnosing complex authentication, access, and infrastructure issues across Active Directory, Azure Entra ID, and Microsoft 365, backed by hands-on SIEM threat triage and detection engineering[cite: 2].
+        Experienced IT and cybersecurity practitioner specializing in enterprise identity governance, endpoint defense, and log analysis. Demonstrated background diagnosing complex authentication, access, and infrastructure issues across Active Directory, Azure Entra ID, and Microsoft 365, backed by hands-on SIEM threat triage and detection engineering.
       </p>
     </section>
 
     <section>
       <h2>Featured Security Projects & Write-Ups</h2>
+      
+      <!-- Interactive Filter Buttons -->
+      <div class="filter-group">
+        <button class="filter-btn active" onclick="filterProjects('all')">All Work</button>
+        <button class="filter-btn" onclick="filterProjects('soc')">SOC & Detection</button>
+        <button class="filter-btn" onclick="filterProjects('iam')">IAM & Cloud</button>
+        <button class="filter-btn" onclick="filterProjects('auto')">Automation & Scripting</button>
+      </div>
+
       <div class="grid">
         
-        <div class="card">
+        <div class="card" data-category="iam">
           <div>
             <h3>AWS IAM Home Lab</h3>
             <p>Practical implementation of Identity & Access Management on AWS: least-privilege policies, role assumption, permission boundaries, and MFA enforcement.</p>
@@ -269,11 +405,23 @@
               <span class="tag">Cloud Security</span>
               <span class="tag">RBAC</span>
             </div>
+            <details>
+              <summary>View Policy Architecture</summary>
+              <pre>{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Allow",
+    "Action": "sts:AssumeRole",
+    "Resource": "arn:aws:iam::123456789012:role/SOCAnalystRole",
+    "Condition": {"Bool": {"aws:MultiFactorAuthPresent": "true"}}
+  }]
+}</pre>
+            </details>
           </div>
           <a href="https://github.com/OSCARCC12/aws-iam-home-lab" target="_blank">View GitHub Repo →</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-category="soc">
           <div>
             <h3>Wazuh SOC Lab (Part 1)</h3>
             <p>Architected and configured a dedicated home SOC environment running Ubuntu Server and Wazuh SIEM manager to monitor and triage enterprise threats.</p>
@@ -283,10 +431,10 @@
               <span class="tag">Linux</span>
             </div>
           </div>
-          <a href="https://medium.com/@oscarecabrerap/wazuh-soc-home-lab-fda0e8843e37" target="_blank">Read Article →</a>
+          <a href="url?id=6" target="_blank">Read Article →</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-category="soc">
           <div>
             <h3>Wazuh & Sysmon Telemetry (Part 2)</h3>
             <p>Deployed Wazuh agents to Windows endpoints and configured Sysmon to capture granular event IDs for process execution and anomalous network connections.</p>
@@ -299,7 +447,7 @@
           <a href="https://medium.com/@oscarecabrerap/building-my-home-soc-lab-connecting-wazuh-agents-ingesting-sysmon-telemetry-part-2-6a69c85ae7f8" target="_blank">Read Article →</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-category="auto">
           <div>
             <h3>Querying REST APIs for Threat Analysis</h3>
             <p>Developed Python and API workflows to automate threat intelligence enrichment, IP lookups, and security telemetry parsing.</p>
@@ -308,11 +456,21 @@
               <span class="tag">REST API</span>
               <span class="tag">Threat Intel</span>
             </div>
+            <details>
+              <summary>View Sample Python Query</summary>
+              <pre>import requests
+
+url = "https://www.virustotal.com/api/v3/ip_addresses/{ip}"
+headers = {"x-apikey": API_KEY}
+response = requests.get(url, headers=headers)
+stats = response.json()['data']['attributes']['last_analysis_stats']
+print(f"Malicious Detections: {stats['malicious']}")</pre>
+            </details>
           </div>
           <a href="https://medium.com/@oscarecabrerap/querying-rest-apis-for-threat-analysis-516ed0628982" target="_blank">Read Article →</a>
         </div>
 
-        <div class="card">
+        <div class="card" data-category="soc">
           <div>
             <h3>LetsDefend: SOC257 Investigation</h3>
             <p>Comprehensive incident investigation write-up triaging an unauthorized VPN connection alert, investigating logs, and mapping indicators of compromise.</p>
@@ -334,37 +492,37 @@
         <div class="skill-cat">
           <h4>SECURITY OPERATIONS</h4>
           <ul>
-            <li>Splunk & Elastic Stack[cite: 2]</li>
-            <li>Sysmon & Windows Event IDs[cite: 2]</li>
-            <li>Alert Triage & Remediation[cite: 2]</li>
-            <li>MITRE ATT&CK Mapping[cite: 2]</li>
+            <li>Splunk & Elastic Stack</li>
+            <li>Sysmon & Windows Event IDs</li>
+            <li>Alert Triage & Remediation</li>
+            <li>MITRE ATT&CK Mapping</li>
           </ul>
         </div>
         <div class="skill-cat">
           <h4>IDENTITY & ACCESS (IAM)</h4>
           <ul>
-            <li>Azure Entra ID & Active Directory[cite: 2]</li>
-            <li>RBAC & Least Privilege[cite: 2]</li>
-            <li>Account Lifecycle & Provisioning[cite: 2]</li>
-            <li>SailPoint & MFA Enforcement[cite: 2]</li>
+            <li>Azure Entra ID & Active Directory</li>
+            <li>RBAC & Least Privilege</li>
+            <li>Account Lifecycle & Provisioning</li>
+            <li>SailPoint & MFA Enforcement</li>
           </ul>
         </div>
         <div class="skill-cat">
           <h4>ENTERPRISE IT & NETWORKS</h4>
           <ul>
-            <li>ServiceNow & Ticket Governance[cite: 2]</li>
-            <li>Cisco Routing/Switching (CCNA)[cite: 2]</li>
-            <li>VPNs, DNS, DHCP & Wireshark[cite: 2]</li>
-            <li>PowerShell, Bash & Python[cite: 2]</li>
+            <li>ServiceNow & Ticket Governance</li>
+            <li>Cisco Routing/Switching (CCNA)</li>
+            <li>VPNs, DNS, DHCP & Wireshark</li>
+            <li>PowerShell, Bash & Python</li>
           </ul>
         </div>
         <div class="skill-cat">
           <h4>CERTIFICATIONS</h4>
           <ul>
-            <li>CompTIA Security+ & PenTest+[cite: 2]</li>
-            <li>CompTIA Network+ & CCNA[cite: 2]</li>
-            <li>ISC2 CC & Azure Fundamentals[cite: 2]</li>
-            <li>Secret Security Clearance[cite: 2]</li>
+            <li>CompTIA Security+ & PenTest+</li>
+            <li>CompTIA Network+ & CCNA</li>
+            <li>ISC2 CC & Azure Fundamentals</li>
+            <li>Secret Security Clearance</li>
           </ul>
         </div>
       </div>
@@ -375,35 +533,35 @@
       
       <div class="timeline-item">
         <div class="timeline-header">
-          <span class="timeline-title">Fidelity National Financial — Service Desk Analyst[cite: 2]</span>
-          <span class="timeline-date">Mar 2024 – Present[cite: 2]</span>
+          <span class="timeline-title">Fidelity National Financial — Service Desk Analyst</span>
+          <span class="timeline-date">Mar 2024 – Present</span>
         </div>
         <ul>
-          <li>Troubleshoot enterprise identity, authentication, and access across Active Directory, Azure Entra ID, and M365[cite: 2].</li>
-          <li>Investigate account lockouts, privilege failures, and security alerts via Splunk dashboards[cite: 2].</li>
-          <li>Execute IAM lifecycle requests (provisioning, deprovisioning, role assignment) in ServiceNow[cite: 2].</li>
+          <li>Troubleshoot enterprise identity, authentication, and access across Active Directory, Azure Entra ID, and M365.</li>
+          <li>Investigate account lockouts, privilege failures, and security alerts via Splunk dashboards.</li>
+          <li>Execute IAM lifecycle requests (provisioning, deprovisioning, role assignment) in ServiceNow.</li>
         </ul>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-header">
-          <span class="timeline-title">Duke Energy — Enterprise Help Desk Analyst[cite: 2]</span>
-          <span class="timeline-date">Dec 2022 – Apr 2024[cite: 2]</span>
+          <span class="timeline-title">Duke Energy — Enterprise Help Desk Analyst</span>
+          <span class="timeline-date">Dec 2022 – Apr 2024</span>
         </div>
         <ul>
-          <li>Administered AD group policies enforcing least privilege and strict compliance (NIST/HIPAA)[cite: 2].</li>
-          <li>Supported enterprise VPN, endpoint protection agents, and account governance across regulated systems[cite: 2].</li>
+          <li>Administered AD group policies enforcing least privilege and strict compliance (NIST/HIPAA).</li>
+          <li>Supported enterprise VPN, endpoint protection agents, and account governance across regulated systems.</li>
         </ul>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-header">
-          <span class="timeline-title">Florida Army National Guard — Infantryman (Deployed) & Access Control[cite: 2]</span>
-          <span class="timeline-date">Jan 2021 – Nov 2022[cite: 2]</span>
+          <span class="timeline-title">Florida Army National Guard — Infantryman (Deployed) & Access Control</span>
+          <span class="timeline-date">Jan 2021 – Nov 2022</span>
         </div>
         <ul>
-          <li>Enforced DoD logical/physical access controls and monitored IDS logs maintaining zero security breaches[cite: 2].</li>
-          <li>Managed verified credentials and secure facility access for statewide emergency response operations[cite: 2].</li>
+          <li>Enforced DoD logical/physical access controls and monitored IDS logs maintaining zero security breaches.</li>
+          <li>Managed verified credentials and secure facility access for statewide emergency response operations.</li>
         </ul>
       </div>
 
@@ -413,6 +571,25 @@
       Oscar Cabrera • Portfolio & Security Telemetry Documentation
     </footer>
   </div>
+
+  <script>
+    function filterProjects(category) {
+      // Toggle active state on buttons
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Filter cards
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
