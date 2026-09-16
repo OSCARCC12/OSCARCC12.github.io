@@ -150,6 +150,50 @@
       margin-bottom: 1.2rem;
     }
 
+    /* Certifications Section */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .cert-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .cert-card:hover {
+      border-color: var(--accent);
+    }
+
+    .cert-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--heading);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .cert-issuer {
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .cert-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .cert-status {
+      font-size: 0.75rem;
+      color: #10b981;
+      font-weight: 500;
+    }
+
     /* Interactive Filter Controls */
     .filter-group {
       display: flex;
@@ -360,6 +404,7 @@
       h1 { font-size: 1.8rem; }
       .metrics-bar { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
       .grid { grid-template-columns: 1fr; }
+      .cert-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -381,6 +426,13 @@
       </div>
     </header>
 
+    <section>
+      <h2>About</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+        Experienced IT and cybersecurity practitioner specializing in enterprise identity governance, endpoint defense, and log analysis. Demonstrated background diagnosing complex authentication and access control failures across Active Directory, Azure Entra ID, and AWS IAM at enterprise scale. Proficient in SIEM platforms (Splunk, Wazuh), threat detection engineering, and incident response workflows. Holds DoD Secret security clearance and 6+ industry certifications (Security+, Network+, CCNA, PenTest+). Passionate about hands-on lab work, threat intelligence, and automating security workflows.
+      </p>
+    </section>
+
     <!-- Proof Strip -->
     <div class="metrics-bar">
       <div class="metric-card">
@@ -400,13 +452,6 @@
         <div class="metric-label">DoD Security Clearance</div>
       </div>
     </div>
-
-    <section>
-      <h2>About</h2>
-      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-        Experienced IT and cybersecurity practitioner specializing in enterprise identity governance, endpoint defense, and log analysis. Demonstrated background diagnosing complex authentication and access control failures across Active Directory, Azure Entra ID, and AWS IAM at enterprise scale. Proficient in SIEM platforms (Splunk, Wazuh), threat detection engineering, and incident response workflows. Holds DoD Secret security clearance and 6+ industry certifications (Security+, Network+, CCNA, PenTest+). Passionate about hands-on lab work, threat intelligence, and automating security workflows.
-      </p>
-    </section>
 
     <section>
       <h2>Featured Security Projects & Write-Ups</h2>
@@ -512,7 +557,49 @@ print(f"Malicious Detections: {stats['malicious']}")</pre>
     </section>
 
     <section>
-      <h2>Core Skills & Certifications</h2>
+      <h2>Certifications</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-name">CompTIA Security+</div>
+          <div class="cert-issuer">CompTIA</div>
+          <div class="cert-date">Expires: Jan 2027</div>
+          <div class="cert-status">✓ Active</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-name">CompTIA Network+</div>
+          <div class="cert-issuer">CompTIA</div>
+          <div class="cert-date">Expires: Mar 2026</div>
+          <div class="cert-status">✓ Active</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-name">CompTIA PenTest+</div>
+          <div class="cert-issuer">CompTIA</div>
+          <div class="cert-date">Expires: Sep 2026</div>
+          <div class="cert-status">✓ Active</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-name">Cisco CCNA</div>
+          <div class="cert-issuer">Cisco</div>
+          <div class="cert-date">Expires: Feb 2026</div>
+          <div class="cert-status">✓ Active</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-name">ISC2 Certified in Cybersecurity (CC)</div>
+          <div class="cert-issuer">ISC2</div>
+          <div class="cert-date">Expires: Dec 2025</div>
+          <div class="cert-status">✓ Active</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-name">Microsoft Azure Fundamentals (AZ-900)</div>
+          <div class="cert-issuer">Microsoft</div>
+          <div class="cert-date">Expires: Jul 2026</div>
+          <div class="cert-status">✓ Active</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Core Skills</h2>
       <div class="skills-block">
         <div class="skill-cat">
           <h4>SECURITY OPERATIONS</h4>
@@ -542,12 +629,12 @@ print(f"Malicious Detections: {stats['malicious']}")</pre>
           </ul>
         </div>
         <div class="skill-cat">
-          <h4>CERTIFICATIONS</h4>
+          <h4>CLOUD & INFRASTRUCTURE</h4>
           <ul>
-            <li>CompTIA Security+ & PenTest+</li>
-            <li>CompTIA Network+ & CCNA</li>
-            <li>ISC2 CC & Azure Fundamentals</li>
-            <li>Secret Security Clearance</li>
+            <li>AWS IAM & EC2</li>
+            <li>Azure AD & Entra ID</li>
+            <li>Linux & Windows Server</li>
+            <li>Docker & Container Security</li>
           </ul>
         </div>
       </div>
