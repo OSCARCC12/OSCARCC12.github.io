@@ -55,7 +55,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
-  text-align: center;
+  justify-content: center;
 }
 
 .links a {
