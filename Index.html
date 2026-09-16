@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oscar Cabrera | SOC, IAM & IT Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --heading: #f0f6fc;
+      --accent: #58a6ff;
+      --tag-bg: #1f242c;
+      --tag-border: #388bfd33;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 3rem 0;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: var(--heading);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 0.3rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: var(--card-bg);
+      transition: all 0.2s ease;
+    }
+
+    .links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: var(--heading);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .card:hover {
+      border-color: #58a6ff66;
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      color: var(--accent);
+    }
+
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      align-self: flex-start;
+    }
+
+    .card a:hover { text-decoration: underline; }
+
+    .skills-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-cat h4 {
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-cat ul {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-item {
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--border);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-title {
+      font-size: 1rem;
+      color: var(--heading);
+      font-weight: 600;
+    }
+
+    .timeline-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-item ul {
+      padding-left: 1.1rem;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-item li { margin-bottom: 0.3rem; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Oscar Cabrera</h1>
+      <div class="subtitle">IT Support | SOC Analyst | IAM Engineer</div>
+      <div class="links">
+        <a href="https://linkedin.com/in/oscarcabrera1223" target="_blank">LinkedIn</a>
+        <a href="https://github.com/OSCARCC12" target="_blank">GitHub</a>
+        <a href="https://medium.com/@oscarecabrerap" target="_blank">Medium</a>
+        <a href="https://www.credly.com/users/oscar-cabrera.967fc3a5" target="_blank">Credly Certifications</a>
+        <a href="mailto:Oscar.Cabrera1112@gmail.com">Email</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        Experienced IT and security practitioner specializing in enterprise identity governance, endpoint defense, and log analysis[cite: 2]. Proven background diagnosing complex authentication, access, and infrastructure issues across Active Directory, Azure Entra ID, and Microsoft 365, backed by hands-on SIEM threat triage and detection engineering[cite: 2].
+      </p>
+    </section>
+
+    <section>
+      <h2>Featured Security Projects & Write-Ups</h2>
+      <div class="grid">
+        
+        <div class="card">
+          <div>
+            <h3>AWS IAM Home Lab</h3>
+            <p>Practical implementation of Identity & Access Management on AWS: least-privilege policies, role assumption, permission boundaries, and MFA enforcement.</p>
+            <div class="tags">
+              <span class="tag">AWS IAM</span>
+              <span class="tag">Cloud Security</span>
+              <span class="tag">RBAC</span>
+            </div>
+          </div>
+          <a href="https://github.com/OSCARCC12/aws-iam-home-lab" target="_blank">View GitHub Repo →</a>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>Wazuh SOC Lab (Part 1)</h3>
+            <p>Architected and configured a dedicated home SOC environment running Ubuntu Server and Wazuh SIEM manager to monitor and triage enterprise threats.</p>
+            <div class="tags">
+              <span class="tag">Wazuh</span>
+              <span class="tag">SIEM Architecture</span>
+              <span class="tag">Linux</span>
+            </div>
+          </div>
+          <a href="https://medium.com/@oscarecabrerap/wazuh-soc-home-lab-fda0e8843e37" target="_blank">Read Article →</a>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>Wazuh & Sysmon Telemetry (Part 2)</h3>
+            <p>Deployed Wazuh agents to Windows endpoints and configured Sysmon to capture granular event IDs for process execution and anomalous network connections.</p>
+            <div class="tags">
+              <span class="tag">Sysmon</span>
+              <span class="tag">Detection Engineering</span>
+              <span class="tag">Windows Logs</span>
+            </div>
+          </div>
+          <a href="https://medium.com/@oscarecabrerap/building-my-home-soc-lab-connecting-wazuh-agents-ingesting-sysmon-telemetry-part-2-6a69c85ae7f8" target="_blank">Read Article →</a>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>Querying REST APIs for Threat Analysis</h3>
+            <p>Developed Python and API workflows to automate threat intelligence enrichment, IP lookups, and security telemetry parsing.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Threat Intel</span>
+            </div>
+          </div>
+          <a href="https://medium.com/@oscarecabrerap/querying-rest-apis-for-threat-analysis-516ed0628982" target="_blank">Read Article →</a>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>LetsDefend: SOC257 Investigation</h3>
+            <p>Comprehensive incident investigation write-up triaging an unauthorized VPN connection alert, investigating logs, and mapping indicators of compromise.</p>
+            <div class="tags">
+              <span class="tag">Incident Response</span>
+              <span class="tag">LetsDefend</span>
+              <span class="tag">Triage</span>
+            </div>
+          </div>
+          <a href="https://www.linkedin.com/pulse/letsdefend-writeup-soc257-vpn-connection-detected-from-oscar-cabrera-qbdbe/" target="_blank">Read Write-up →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Core Skills & Certifications</h2>
+      <div class="skills-block">
+        <div class="skill-cat">
+          <h4>SECURITY OPERATIONS</h4>
+          <ul>
+            <li>Splunk & Elastic Stack[cite: 2]</li>
+            <li>Sysmon & Windows Event IDs[cite: 2]</li>
+            <li>Alert Triage & Remediation[cite: 2]</li>
+            <li>MITRE ATT&CK Mapping[cite: 2]</li>
+          </ul>
+        </div>
+        <div class="skill-cat">
+          <h4>IDENTITY & ACCESS (IAM)</h4>
+          <ul>
+            <li>Azure Entra ID & Active Directory[cite: 2]</li>
+            <li>RBAC & Least Privilege[cite: 2]</li>
+            <li>Account Lifecycle & Provisioning[cite: 2]</li>
+            <li>SailPoint & MFA Enforcement[cite: 2]</li>
+          </ul>
+        </div>
+        <div class="skill-cat">
+          <h4>ENTERPRISE IT & NETWORKS</h4>
+          <ul>
+            <li>ServiceNow & Ticket Governance[cite: 2]</li>
+            <li>Cisco Routing/Switching (CCNA)[cite: 2]</li>
+            <li>VPNs, DNS, DHCP & Wireshark[cite: 2]</li>
+            <li>PowerShell, Bash & Python[cite: 2]</li>
+          </ul>
+        </div>
+        <div class="skill-cat">
+          <h4>CERTIFICATIONS</h4>
+          <ul>
+            <li>CompTIA Security+ & PenTest+[cite: 2]</li>
+            <li>CompTIA Network+ & CCNA[cite: 2]</li>
+            <li>ISC2 CC & Azure Fundamentals[cite: 2]</li>
+            <li>Secret Security Clearance[cite: 2]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Work Experience</h2>
+      
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <span class="timeline-title">Fidelity National Financial — Service Desk Analyst[cite: 2]</span>
+          <span class="timeline-date">Mar 2024 – Present[cite: 2]</span>
+        </div>
+        <ul>
+          <li>Troubleshoot enterprise identity, authentication, and access across Active Directory, Azure Entra ID, and M365[cite: 2].</li>
+          <li>Investigate account lockouts, privilege failures, and security alerts via Splunk dashboards[cite: 2].</li>
+          <li>Execute IAM lifecycle requests (provisioning, deprovisioning, role assignment) in ServiceNow[cite: 2].</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <span class="timeline-title">Duke Energy — Enterprise Help Desk Analyst[cite: 2]</span>
+          <span class="timeline-date">Dec 2022 – Apr 2024[cite: 2]</span>
+        </div>
+        <ul>
+          <li>Administered AD group policies enforcing least privilege and strict compliance (NIST/HIPAA)[cite: 2].</li>
+          <li>Supported enterprise VPN, endpoint protection agents, and account governance across regulated systems[cite: 2].</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <span class="timeline-title">Florida Army National Guard — Infantryman (Deployed) & Access Control[cite: 2]</span>
+          <span class="timeline-date">Jan 2021 – Nov 2022[cite: 2]</span>
+        </div>
+        <ul>
+          <li>Enforced DoD logical/physical access controls and monitored IDS logs maintaining zero security breaches[cite: 2].</li>
+          <li>Managed verified credentials and secure facility access for statewide emergency response operations[cite: 2].</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <footer>
+      Oscar Cabrera • Portfolio & Security Telemetry Documentation
+    </footer>
+  </div>
+
+</body>
+</html>
