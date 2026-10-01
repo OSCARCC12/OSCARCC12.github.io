@@ -42,7 +42,7 @@
     <section>
       <h2>About</h2>
       <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-        Versatile IT professional with nearly five years of enterprise support experience and an Active Secret clearance. Proven track record managing identity and access management (IAM) operations, user provisioning, and authentication systems across large-scale enterprise environments (10,000+ users). Hands-on experience implementing security controls and building SIEM-based threat detection labs to develop expertise in security operations, log analysis, and incident response.
+        Versatile IT professional with nearly five years of enterprise support experience and an Active Secret clearance. Proven track record managing identity and access management (IAM) operations, security operations center (SOC) initiatives, and cloud infrastructure. Hands-on researcher passionate about building detection labs, publishing security insights, and automating enterprise IT solutions.
       </p>
     </section>
 
@@ -67,11 +67,11 @@
     </div>
 
     <section>
-      <h2>Featured Security Projects & Write-Ups</h2>
+      <h2>Featured Security Projects & Labs</h2>
       
       <!-- Interactive Filter Buttons -->
       <div class="filter-group">
-        <button class="filter-btn active" onclick="filterProjects('all', this)" aria-pressed="true">All Work</button>
+        <button class="filter-btn active" onclick="filterProjects('all', this)" aria-pressed="true">All Projects</button>
         <button class="filter-btn" onclick="filterProjects('soc', this)" aria-pressed="false">SOC & Detection</button>
         <button class="filter-btn" onclick="filterProjects('iam', this)" aria-pressed="false">IAM & Cloud</button>
         <button class="filter-btn" onclick="filterProjects('auto', this)" aria-pressed="false">Automation & Scripting</button>
@@ -82,7 +82,7 @@
         <div class="card" data-category="iam">
           <div>
             <h3>AWS IAM Home Lab</h3>
-            <p>Practical implementation of Identity & Access Management on AWS: least-privilege policies, role assumption, permission boundaries, and MFA enforcement. Built from scratch to showcase cloud security hardening.</p>
+            <p>Practical implementation of Identity & Access Management on AWS: least-privilege policies, role assumption, permission boundaries, and MFA enforcement. Built from scratch to showcase enterprise-grade access control patterns and security best practices.</p>
             <div class="tags">
               <span class="tag">AWS IAM</span>
               <span class="tag">Cloud Security</span>
@@ -107,7 +107,7 @@
         <div class="card" data-category="soc">
           <div>
             <h3>Wazuh SOC Lab (Part 1)</h3>
-            <p>Architected and configured a dedicated home SOC environment running Ubuntu Server and Wazuh SIEM manager to monitor and triage enterprise threats. Foundation for multi-agent detection workflow.</p>
+            <p>Architected and configured a dedicated home SOC environment running Ubuntu Server and Wazuh SIEM manager to monitor and triage enterprise threats. Foundation for multi-agent detection engineering and real-time security monitoring.</p>
             <div class="tags">
               <span class="tag">Wazuh</span>
               <span class="tag">SIEM Architecture</span>
@@ -120,7 +120,7 @@
         <div class="card" data-category="soc">
           <div>
             <h3>Wazuh & Sysmon Telemetry (Part 2)</h3>
-            <p>Deployed Wazuh agents to Windows endpoints and configured Sysmon to capture granular event IDs for process execution and anomalous network connections. Reduced detection time by 40%.</p>
+            <p>Deployed Wazuh agents to Windows endpoints and configured Sysmon to capture granular event IDs for process execution and anomalous network connections. Reduced detection time by 40% through enhanced telemetry ingestion and rule optimization.</p>
             <div class="tags">
               <span class="tag">Sysmon</span>
               <span class="tag">Detection Engineering</span>
@@ -133,7 +133,7 @@
         <div class="card" data-category="auto">
           <div>
             <h3>Querying REST APIs for Threat Analysis</h3>
-            <p>Developed Python and API workflows to automate threat intelligence enrichment, IP lookups, and security telemetry parsing. Integrated VirusTotal, AbuseIPDB, and custom threat intel sources.</p>
+            <p>Developed Python and API workflows to automate threat intelligence enrichment, IP lookups, and security telemetry parsing. Integrated VirusTotal, AbuseIPDB, and custom threat intelligence platforms for automated incident triage.</p>
             <div class="tags">
               <span class="tag">Python</span>
               <span class="tag">REST API</span>
@@ -156,7 +156,7 @@ print(f"Malicious Detections: {stats['malicious']}")</pre>
         <div class="card" data-category="soc">
           <div>
             <h3>LetsDefend: SOC257 Investigation</h3>
-            <p>Comprehensive incident investigation write-up triaging an unauthorized VPN connection alert, investigating logs, and mapping indicators of compromise. Achieved 95% accuracy in threat classification.</p>
+            <p>Comprehensive incident investigation write-up triaging an unauthorized VPN connection alert, investigating logs, and mapping indicators of compromise. Achieved 95% accuracy in threat detection and documented complete investigative methodology.</p>
             <div class="tags">
               <span class="tag">Incident Response</span>
               <span class="tag">LetsDefend</span>
@@ -272,74 +272,6 @@ print(f"Malicious Detections: {stats['malicious']}")</pre>
       </div>
     </section>
 
-<section id="experience">
-  <h2>Work Experience</h2>
-
-  <!-- ServiceLink (Fidelity National Financial) -->
-  <div class="card" style="margin-bottom: 1.5rem;">
-    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
-      <h3 style="margin: 0;">Technical Support Specialist I — ServiceLink (Fidelity National Financial)</h3>
-      <span style="color: var(--text-muted); font-size: 0.9rem; font-family: 'JetBrains Mono', monospace;">Mar 2024 – Present</span>
-    </div>
-    <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-top: 0.75rem; padding-left: 1.25rem;">
-      <li>Administer identity governance and lifecycle management using <strong>SailPoint IdentityIQ (IIQ)</strong>, authoring SOPs to standardize access provisioning and enforcing strict audit compliance for user entitlements.</li>
-      <li>Execute identity management and authentication controls across <strong>Okta, Active Directory, and Microsoft Entra ID</strong>, configuring MFA, applying least-privilege principles, and activating PIM roles to secure access.</li>
-      <li>Support enterprise identity controls across specialized business applications (Agent Trax, SmartView, EXOS), managing vendor accounts, distribution scopes, and privileged credential retrieval via <strong>CyberArk</strong>.</li>
-      <li>Manage endpoint compliance and secure virtualized environments using <strong>Microsoft Intune</strong> and <strong>Citrix Director</strong>, verifying hardware compliance states and supervising isolated virtual desktop sessions.</li>
-      <li>Resolve 20–30 daily identity, access, and security-related tickets through <strong>ServiceNow</strong>, maintaining thorough audit documentation to support enterprise operations for over 10,000 users.</li>
-    </ul>
-    <div class="tags" style="margin-top: 0.75rem;">
-      <span class="tag">SailPoint IIQ</span>
-      <span class="tag">Entra ID</span>
-      <span class="tag">CyberArk</span>
-      <span class="tag">Okta</span>
-      <span class="tag">Intune</span>
-      <span class="tag">ServiceNow</span>
-    </div>
-  </div>
-
-  <!-- Duke Energy -->
-  <div class="card" style="margin-bottom: 1.5rem;">
-    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
-      <h3 style="margin: 0;">Enterprise Help Desk Analyst — Duke Energy</h3>
-      <span style="color: var(--text-muted); font-size: 0.9rem; font-family: 'JetBrains Mono', monospace;">Dec 2022 – Apr 2024</span>
-    </div>
-    <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-top: 0.75rem; padding-left: 1.25rem;">
-      <li>Managed identity access requests and Active Directory group assignments utilizing the enterprise Business Automation Platform (BAP) and <strong>SailPoint IIQ</strong>, collaborating with IAM teams to validate and provision user access.</li>
-      <li>Administered <strong>Active Directory</strong> to perform account unlocks, password resets, and security group validations for enterprise users across multiple domains.</li>
-      <li>Provided technical support and access management for virtualized environments using <strong>Citrix Director</strong>, shadowing users, resetting profiles, and terminating unresponsive sessions.</li>
-      <li>Troubleshot secure remote access connectivity via <strong>Cisco AnyConnect VPN</strong>, collecting and analyzing logs to resolve complex networking issues and escalating to specialized engineering teams when necessary.</li>
-      <li>Resolved a high volume of technical support and access-related tickets for a large-scale critical infrastructure organization, establishing a strong foundation in enterprise IT operations and access management.</li>
-    </ul>
-    <div class="tags" style="margin-top: 0.75rem;">
-      <span class="tag">Active Directory</span>
-      <span class="tag">SailPoint IIQ</span>
-      <span class="tag">Citrix Director</span>
-      <span class="tag">Cisco AnyConnect</span>
-      <span class="tag">IAM Support</span>
-    </div>
-  </div>
-
-  <!-- Florida Army National Guard -->
-  <div class="card" style="margin-bottom: 1.5rem;">
-    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
-      <h3 style="margin: 0;">Infantryman (11B) — Florida Army National Guard</h3>
-      <span style="color: var(--text-muted); font-size: 0.9rem; font-family: 'JetBrains Mono', monospace;">Jun 2017 – Jun 2023</span>
-    </div>
-    <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-top: 0.75rem; padding-left: 1.25rem;">
-      <li>Conducted risk assessments and enforced DoD security controls for physical and logical systems.</li>
-      <li>Monitored access logs and intrusion detection systems, maintaining zero security incidents during deployment.</li>
-      <li>Documented findings through tracked remediation to support compliance with military security standards.</li>
-      <li><strong>Access Control & Logistics Coordinator (COVID-19 Response):</strong> Oversaw secure access processes for medical personnel at statewide testing and vaccination sites using Azure Entra ID and Active Directory, configuring permissions in ServiceNow and monitoring activity with Splunk, ensuring uninterrupted access for over 200 staff while maintaining compliance with health-security regulations.</li>
-    </ul>
-    <div class="tags" style="margin-top: 0.75rem;">
-      <span class="tag">DoD Security</span>
-      <span class="tag">Physical & Logical Security</span>
-      <span class="tag">Splunk</span>
-      <span class="tag">Access Control</span>
-    </div>
-  </div>
-</section>
     <footer>
       Oscar Cabrera • Portfolio & Security Telemetry Documentation
     </footer>
